@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florin Web Design | Site-uri moderne</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #0b1020;
+            color: #f5f7ff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 9%;
+            border-bottom: 1px solid #ffffff12;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #5685ff;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #c2c8d8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #5685ff;
+        }
+
+        .hero {
+            padding: 130px 9% 120px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid #5685ff55;
+            color: #80a3ff;
+            background: #5685ff12;
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.12;
+            margin: 30px 0 22px;
+            max-width: 850px;
+        }
+
+        .hero h1 span {
+            color: #5685ff;
+        }
+
+        .hero p {
+            color: #aab2c7;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 620px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #5685ff;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 7px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3768e5;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 85px 9%;
+        }
+
+        .section-label {
+            color: #5685ff;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin: 15px 0 18px;
+        }
+
+        .section-description {
+            color: #aab2c7;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        .projects {
+            background: #11182b;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #19233b;
+            border: 1px solid #ffffff12;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #5685ff80;
+        }
+
+        .project-image {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+        }
+
+        .barber {
+            background: linear-gradient(135deg, #171717, #57452a);
+        }
+
+        .coffee {
+            background: linear-gradient(135deg, #39251b, #a46b45);
+        }
+
+        .project-info {
+            padding: 27px;
+        }
+
+        .project-info h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #aab2c7;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #80a3ff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .service-card {
+            padding: 30px;
+            background: #151e33;
+            border: 1px solid #ffffff12;
+            border-radius: 10px;
+        }
+
+        .service-card .icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        .service-card p {
+            color: #aab2c7;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .about {
+            background: #11182b;
+        }
+
+        .about-content {
+            max-width: 750px;
+        }
+
+        .about-content p {
+            color: #aab2c7;
+            line-height: 1.9;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #aab2c7;
+            margin: 20px auto 30px;
+            line-height: 1.8;
+            max-width: 550px;
+        }
+
+        footer {
+            border-top: 1px solid #ffffff12;
+            padding: 28px 9%;
+            text-align: center;
+            color: #7f899f;
+            font-size: 13px;
+        }
+
+        @media(max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 90px 7%;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .project-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Florin<span>.</span>Web</div>
+
+    <nav>
+        <a href="#acasa">Acasă</a>
+        <a href="#proiecte">Proiecte</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#despre">Despre</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero" id="acasa">
+        <span class="tag">Web design & dezvoltare</span>
+
+        <h1>
+            Construiesc site-uri
+            <span>moderne</span>
+            pentru afaceri.
+        </h1>
+
+        <p>
+            Ajut afacerile să aibă o prezență online prin
+            site-uri de prezentare moderne, rapide și ușor
+            de utilizat.
+        </p>
+
+        <a href="#proiecte" class="btn">Vezi proiectele mele</a>
+    </section>
+
+    <section class="projects" id="proiecte">
+
+        <span class="section-label">Portofoliu</span>
+        <h2 class="section-title">Proiectele mele</h2>
+
+        <p class="section-description">
+            Câteva proiecte demonstrative realizate pentru
+            diferite tipuri de afaceri.
+        </p>
+
+        <div class="project-grid">
+
+            <article class="project-card">
+                <div class="project-image barber">✂️</div>
+
+                <div class="project-info">
+                    <h3>ATELIER 27</h3>
+                    <p>
+                        Site de prezentare pentru o frizerie,
+                        cu servicii, galerie și informații de contact.
+                    </p>
+                    <a class="project-link"
+                       href="https://ybob06768-hue.github.io/atelier-27/"
+                       target="_blank" rel="noopener">
+                        Vezi proiectul →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image coffee">☕</div>
+
+                <div class="project-info">
+                    <h3>Brew & Bean</h3>
+                    <p>
+                        Site modern pentru o cafenea, cu meniu,
+                        fotografii și informații despre locație.
+                    </p>
+                    <a class="project-link"
+                       href="https://ybob06768-hue.github.io/brew-and-bean/"
+                       target="_blank" rel="noopener">
+                        Vezi proiectul →
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="servicii">
+
+        <span class="section-label">Ce ofer</span>
+        <h2 class="section-title">Cu ce te pot ajuta?</h2>
+
+        <p class="section-description">
+            Realizez site-uri de prezentare pentru afaceri
+            care vor să fie prezente pe internet.
+        </p>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="icon">💻</div>
+                <h3>Site-uri de prezentare</h3>
+                <p>
+                    Pagini moderne prin care clienții pot
+                    descoperi afacerea și serviciile tale.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">📱</div>
+                <h3>Design adaptabil</h3>
+                <p>
+                    Site-uri care se adaptează la telefon,
+                    tabletă și calculator.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🚀</div>
+                <h3>Publicare online</h3>
+                <p>
+                    Ajutor pentru publicarea site-ului și
+                    obținerea unui link accesibil online.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about" id="despre">
+
+        <div class="about-content">
+            <span class="section-label">Despre mine</span>
+            <h2 class="section-title">Pasiune pentru web design.</h2>
+
+            <p>
+                Sunt la început de drum în dezvoltarea web și
+                învăț să construiesc site-uri moderne folosind
+                HTML, CSS și instrumente digitale.
+            </p>
+
+            <p>
+                Îmi place să transform ideile în pagini web
+                simple, atractive și ușor de utilizat.
+                Fiecare proiect este o ocazie de a învăța
+                și de a-mi îmbunătăți abilitățile.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <span class="section-label">Hai să discutăm</span>
+        <h2 class="section-title">Ai o idee pentru un site?</h2>
+
+        <p>
+            Dacă ai o afacere și îți dorești un site de
+            prezentare, putem discuta despre proiectul tău.
+        </p>
+
+        <a href="mailto:adresa-ta@email.com" class="btn">
+            Contactează-mă
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Florin Web Design. Proiecte demonstrative.
+</footer>
+
+</body>
+</html>
